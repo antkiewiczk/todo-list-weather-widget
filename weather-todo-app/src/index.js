@@ -5,8 +5,12 @@ import './index.css';
 import App from './App.js';
 import store from './app/store.js';
 import * as serviceWorker from './serviceWorker.js';
-import startAvailabilityChecks from './features/service-availability/service-availability-check.js';
 
+// initial checks
+import startAvailabilityChecks from './features/service-availability/service-availability-check.js';
+import checkTodos from './features/list-todo/list-todo-check.js';
+
+checkTodos(store);
 startAvailabilityChecks(store);
 
 ReactDOM.render(
