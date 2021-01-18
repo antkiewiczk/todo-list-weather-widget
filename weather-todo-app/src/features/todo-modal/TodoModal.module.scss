@@ -28,8 +28,10 @@
         width: 100%;
         justify-content: space-between;
         align-items: center;
-        input {
+        input,
+        textarea {
           margin: 8px;
+          width: 200px;
         }
       }
       .submit {

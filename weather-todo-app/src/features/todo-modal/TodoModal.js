@@ -78,11 +78,12 @@ export default function TodoModal() {
           </div>
           <div className={styles.inputWrapper}>
             <span className={styles.inputName}>Description:</span>{" "}
-            <input
+            <textarea
               type="text"
               name="description"
               onChange={(e) => setDescription(e.target.value)}
               value={description}
+              rows={4}
             />
           </div>
           <div className={styles.inputWrapper}>
