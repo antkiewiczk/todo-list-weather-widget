@@ -1,3 +1,5 @@
+@import "./app/_vars.scss";
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -10,7 +12,7 @@ button {
 }
 
 * {
-  color: #1a1147;
+  color: $font_color;
 }
 
 .App {

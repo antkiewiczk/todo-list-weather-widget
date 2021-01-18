@@ -7,8 +7,8 @@ import styles from "./TodoModal.module.scss";
 
 import { toggleModal } from "../todo-modal/todo-modal-slice.js";
 
-import addTodo from "../add-todo/add-todo.js";
-import editTodo from "../edit-todo/edit-todo.js";
+import addTodo from "../list-todo/add-todo.js";
+import editTodo from "../list-todo/edit-todo.js";
 
 const closeModal = () => {
   store.dispatch(toggleModal({ title: "", description: "", priority: 1 }));
@@ -21,7 +21,7 @@ const handleSubmit = (
 ) => {
   e.preventDefault();
 
-  if (!title || priority < 0 || priority > 100) {
+  if (!title || priority <= 0 || priority > 100) {
     setValidationError(true);
     return;
   }
@@ -42,16 +42,26 @@ export default function TodoModal() {
   const todoModal = useSelector(selectModal);
 
   useEffect(() => {
-    setTitle(todoModal.title);
-    setDescription(todoModal.description);
-    setPriority(todoModal.priority);
+    setTitle(todoModal.title || "");
+    setDescription(todoModal.description || "");
+    setPriority(todoModal.priority || 1);
+    setValidationError(false);
   }, [todoModal.visible]);
 
+  useEffect(() => {
+    if (!title || priority <= 0 || priority > 100) {
+      setValidationError(true);
+      return;
+    }
+    setValidationError(false);
+  }, [title, priority]);
+
+  if (!todoModal.visible) {
+    return <></>;
+  }
+
   return (
-    <div
-      className={styles.modal}
-      style={todoModal.visible ? { display: "block" } : { display: "none" }}
-    >
+    <div className={styles.modal}>
       <div className={styles.modalInner}>
         <h2>
           {todoModal.type === "add" ? "Add a new todo" : "Edit your todo"}

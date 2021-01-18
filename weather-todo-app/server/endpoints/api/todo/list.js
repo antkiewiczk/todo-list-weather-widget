@@ -14,10 +14,6 @@ export default function todoListHandler(server, req, res) {
       .then((models) => models.Todo.findAll())
       .then((result) => ({ data: result }));
   } catch (e) {
-    return AppException.reject(
-      "Internal error",
-      "Listing todos not implemented",
-      e
-    );
+    return AppException.reject(e);
   }
 }

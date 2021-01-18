@@ -14,6 +14,6 @@ export default function todoDeleteHandler(server, req, res) {
       .then((models) => models.Todo.destroy({ where: { uuid: req.params.id } }))
       .then(() => ({ data: req.params.id }));
   } catch (e) {
-    return AppException.reject("Internal error", "Error deleting a todo", e);
+    return AppException.reject(e);
   }
 }

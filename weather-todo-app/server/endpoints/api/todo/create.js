@@ -20,6 +20,6 @@ export default async function todoCreateHandler(server, req, res) {
 
     return { data: newItem.dataValues };
   } catch (e) {
-    return AppException.reject("Internal error", "Error creating a todo", e);
+    return AppException.reject(e);
   }
 }

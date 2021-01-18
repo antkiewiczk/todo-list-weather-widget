@@ -1,15 +1,38 @@
+@import "../../app/_vars.scss";
+
 .weather {
   padding: 32px;
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background-color: #e5e5e5;
+  background-color: $lightGrey;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   .temp {
     font-size: 48px;
-    color: green;
+    color: $green;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      & > .tooltip {
+        opacity: 1;
+      }
+    }
+
+    .tooltip {
+      position: absolute;
+      font-size: 13px;
+      opacity: 0;
+      background-color: $blue;
+      color: white;
+      padding: 12px;
+      transition: opacity 0.15s ease-in-out;
+      right: -100%;
+      border-radius: 0 8px 8px 8px;
+      pointer-events: none;
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { addOne } from "../list-todo/list-todo-slice.js";
+import { addOne } from "./list-todo-slice.js";
 
 import { toggleModal } from "../todo-modal/todo-modal-slice.js";
 

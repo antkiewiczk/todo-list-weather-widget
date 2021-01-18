@@ -22,6 +22,7 @@ function WeatherWidget() {
         style={weather.temp > 25 ? { color: "red" } : { color: "green" }}
       >
         {weather.temp}&#176;C
+        <div className={styles.tooltip}>I am an example tooltip</div>
       </div>
       <span>Feels like: {weather.feels_like}&#176;C</span> <br />
       <span>Pressure: {weather.pressure}hPa</span>

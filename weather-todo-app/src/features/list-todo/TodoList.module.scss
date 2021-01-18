@@ -1,3 +1,5 @@
+@import "../../app/_vars.scss";
+
 .listWrapper {
   width: 100%;
   max-width: 1000px;
@@ -10,7 +12,7 @@
 }
 
 .addTodoButton {
-  border: 1px solid #1a1147;
+  border: 1px solid $font_color;
   border-radius: 3px;
   margin-left: 16px;
   padding: 4px 12px;
@@ -19,8 +21,8 @@
 .todoItem {
   padding: 6px;
   margin-bottom: 8px;
-  color: #e5e5e5;
-  border: 1px solid #e5e5e5;
+  color: $lightGrey;
+  border: 1px solid $lightGrey;
   border-radius: 6px;
   display: flex;
   flex-direction: column;
@@ -65,16 +67,16 @@
   }
 
   .deleteButton {
-    border: 1px solid #ff3232;
+    border: 1px solid $red;
     border-radius: 3px;
-    color: #ff3232;
+    color: $red;
     transition: all 0.1s ease-in-out;
     margin-left: 12px;
     padding: 4px 12px;
 
     &:hover {
-      color: darken(#ff3232, 20%);
-      border-color: darken(#ff3232, 20%);
+      color: darken($red, 20%);
+      border-color: darken($red, 20%);
     }
   }
 }

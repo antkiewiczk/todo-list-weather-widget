@@ -19,7 +19,6 @@ export default function TodoList() {
 
   // search functionality
   if (searchString.length) {
-    console.log("searchString", searchString);
     todoList = todoList.filter(
       (el) =>
         el.title.includes(searchString) ||
