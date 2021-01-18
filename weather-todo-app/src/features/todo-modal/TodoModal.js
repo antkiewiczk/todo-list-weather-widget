@@ -28,8 +28,9 @@ const handleSubmit = (
 
   if (type === "add") {
     addTodo({ title, description, priority });
+  } else {
+    editTodo({ id, title, description, priority });
   }
-  editTodo({ id, title, description, priority });
 };
 
 export default function TodoModal() {

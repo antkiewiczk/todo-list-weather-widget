@@ -58,6 +58,8 @@ button {
 
 .todo-wrapper {
   width: 80%;
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes App-logo-float {

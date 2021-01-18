@@ -7,7 +7,6 @@ export const todoModalSlice = createSlice({
   },
   reducers: {
     toggleModal: (state, action) => {
-      console.log("action.payload", action.payload);
       return { ...state, ...action.payload, visible: !state.visible };
     },
   },

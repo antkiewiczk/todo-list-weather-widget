@@ -10,16 +10,12 @@ export const listTodoSlice = createSlice({
       state.todos = action.payload;
     },
     deleteOne: (state, action) => {
-      console.log("action.payload", action.payload);
       state.todos = state.todos.filter((todo) => todo.uuid !== action.payload);
     },
     addOne: (state, action) => {
-      console.log("action.payload", action.payload);
       state.todos.push(action.payload);
     },
     editOne: (state, action) => {
-      console.log("action.payload", action.payload);
-
       const updated = state.todos.map((item) => {
         if (item.uuid !== action.payload.uuid) {
           return item;
