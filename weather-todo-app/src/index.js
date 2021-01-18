@@ -8,9 +8,9 @@ import * as serviceWorker from './serviceWorker.js';
 
 // initial checks
 import startAvailabilityChecks from './features/service-availability/service-availability-check.js';
-import checkTodos from './features/list-todo/list-todo-check.js';
+import getInitialTodos from './features/list-todo/list-todo-check.js';
 
-checkTodos(store);
+getInitialTodos(store);
 startAvailabilityChecks(store);
 
 ReactDOM.render(

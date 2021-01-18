@@ -143,6 +143,7 @@ export default class Server {
             reqLog.debug(`${req.method} ${req.path} ${req.ip}`);
             next();
         });
+        this.express.use(express.json());
         this.express.use(express.static(path.join(ROOT_DIR, 'public')));
     }
 

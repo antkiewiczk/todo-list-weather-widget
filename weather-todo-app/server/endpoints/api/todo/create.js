@@ -10,14 +10,15 @@ import AppException from "../../../exceptions/AppException.js";
 export default async function todoCreateHandler(server, req, res) {
   try {
     const todoModel = await server.db.models().then((models) => models.Todo);
+    const { title, description, priority } = req.body;
 
-    todoModel.create({
-      title: "test title",
-      description: "test description",
-      priority: 1,
+    const newItem = await todoModel.create({
+      title,
+      description,
+      priority,
     });
 
-    return {};
+    return { data: newItem.dataValues };
   } catch (e) {
     return AppException.reject("Internal error", "Error creating a todo", e);
   }

@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './ServiceAvailability.module.css';
+import styles from './ServiceAvailability.module.scss';
 
 
 export function statusToText(status) {

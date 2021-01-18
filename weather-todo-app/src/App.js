@@ -1,17 +1,14 @@
 import React from "react";
 import logo from "./logo.svg";
 import ServiceAvailbility from "./features/service-availability/ServiceAvailability.js";
-import "./App.css";
+import "./App.scss";
 
-// functions
-import addTodo from "./features/add-todo/add-todo.js";
 
-async function handleAddTodo() {
-  addTodo();
-}
+// components
+import TodoList from "./features/list-todo/TodoList";
+import TodoModal from "./features/todo-modal/TodoModal";
 
-function App(props) {
-  console.log("props", props);
+function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -19,8 +16,12 @@ function App(props) {
         <ServiceAvailbility />
       </header>
       <div className="App-content">
-        <button onClick={handleAddTodo}>yo</button>
+        <div className="weather-wrapper">here goes weather widget</div>
+        <div className="todo-wrapper">
+          <TodoList />
+        </div>
       </div>
+      <TodoModal />
     </div>
   );
 }
