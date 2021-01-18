@@ -28,10 +28,13 @@ export const listTodoSlice = createSlice({
 
       state.todos = updated;
     },
+    showError: (state) => {
+      state.error = true;
+    }
   },
 });
 
-export const { update, deleteOne, addOne, editOne } = listTodoSlice.actions;
+export const { update, deleteOne, addOne, editOne, showError } = listTodoSlice.actions;
 
 export const selectTodos = (state) => state.listTodo.todos;
 
