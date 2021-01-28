@@ -12,7 +12,6 @@ import { selectError } from "./features/error/error-slice";
 
 function App() {
   const isError = useSelector(selectError);
-  console.log("isError", isError);
   return (
     <div className="App">
       {!isError ? (
